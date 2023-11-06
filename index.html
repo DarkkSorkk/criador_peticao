@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>PetitionCraft - Criação de Petições</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Inclusão do CSS do Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <h1 class="display-4">PetitionCraft</h1>
+      <p class="lead">Modelo para criação de petições em geral.</p>
+      <hr class="my-4">
+      <form id="petition-form">
+        <div class="form-group">
+            <label for="petitionType">Tipo de Petição</label>
+            <select class="form-control" id="petitionType">
+              <option>Habeas Corpus</option>
+              <option>Mandado de Segurança</option>
+              <option>Denúncia de Desvio de Verba</option>
+            </select>
+          </div>
+          
+        <div class="form-group">
+          <label for="lawyerName">Nome do Advogado</label>
+          <input type="text" class="form-control" id="lawyerName" required>
+        </div>
+        <div class="form-group">
+          <label for="oabNumber">Número da OAB</label>
+          <input type="text" class="form-control" id="oabNumber" required>
+        </div>
+        <div class="form-group">
+          <label for="clientName">Nome do Cliente</label>
+          <input type="text" class="form-control" id="clientName" required>
+        </div>
+        <div class="form-group">
+            <label for="processNumber">Número do Processo</label>
+            <input type="number" class="form-control" id="processNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="courtDistrict">Comarca</label>
+            <input type="text" class="form-control" id="courtDistrict" required>
+          </div>
+          <div class="form-group">
+            <label for="caseFacts">Fatos do Processo</label>
+            <textarea class="form-control" id="caseFacts" rows="7" required placeholder="Funciona melhor com tópicos!!! Abaixo temos um exemplo&#10;1- Acusação de desacato a autoridade no correios de ibitinga/sp&#10;2- Não houve violencia fisica&#10;3- O reú estava exautado por razão problemas pessoais&#10;4- Elabore que o réu espera a meses pelo beneficio&#10;5- Inclua lei, jurisprudencia, julgados em processos similares"></textarea>
+          </div>
+          
+
+<button type="submit" class="btn btn-primary" id="submit-button">Criar Petição</button>
+</form>
+
+<!-- Container para a Resposta da API -->
+<div id="response-container"></div>
+
+<div id="loading-indicator" style="display: none;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Carregando...</span>
+    </div>
+</div>
+
+<!-- Restante do HTML abaixo -->
+
+          
+    </div>
+  </div>
+
+  <!-- Inclusão do jQuery e do Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Script personalizado -->
+  <script src="script.js"></script>
+</body>
+</html>

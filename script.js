@@ -23,6 +23,7 @@
                     contentType: "application/json",
                     data: JSON.stringify(formData),
                     success: function(response) {
+                        console.log("Resposta recebida do Flask:", response);
                         // Esconde o indicador de carregamento e habilita o botão
                         $("#loading-indicator").hide();
                         $("#submit-button").prop('disabled', false);
